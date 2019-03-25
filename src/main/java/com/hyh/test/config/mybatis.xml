@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <settings>
+        <!-- 延迟加载总开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 侵入式延迟加载开关 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/java1801?useSSL=true"/>
+        <property name="username" value="root"/>
+        <property name="password" value="jasmine"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+    <!-- 基于xml的实现方式 mybatis推荐这种方式 -->
+  	<mapper resource="com/hyh/test/mapper/userMapper.xml"/>
+      <!--<mapping resource="com/tl/mapping/SchoolClassMapper.xml"/>-->
+  </mappers>
+
+</configuration>
